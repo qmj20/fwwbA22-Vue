@@ -1,12 +1,21 @@
 import VueRouter from 'vue-router'
 import Vue from "vue";
 import Login from "@/components/Login";
+import creat from "@/components/Creat";
+import detail from "@/components/detail";
+import index from "@/components/index";
+import zhanshi from "@/components/zhanshi";
+
 
 Vue.use(VueRouter)
 const router = new VueRouter({
     routes: [
         { path: '/', redirect: '/index' },
         { path: '/login', component: Login },
+        { path: '/creat', component: creat },
+        { path: '/detail', component: detail },
+        { path: '/index', component: index },
+        { path: '/zhanshi', component: zhanshi },
     ]
 })
 router.beforeEach((to, from, next) => {
@@ -15,7 +24,7 @@ router.beforeEach((to, from, next) => {
      * from: 代表从哪个路径跳转而来
      * next：一个函数，表示放行
      * */
-    if (to.path === '/login' ) return next()
+    if (to.path === '/login' || to.path === '/index' || to.path === '/creat' || to.path === '/detail' || to.path === '/zhanshi' ) return next()
     let token = window.sessionStorage.getItem('token')
     if (!token) return next('/login')
     next()
