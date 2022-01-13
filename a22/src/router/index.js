@@ -1,23 +1,25 @@
 import VueRouter from 'vue-router'
 import Vue from "vue";
-import Login from "@/components/Login";
-import creat from "@/components/Creat";
-import detail from "@/components/detail";
-import index from "@/components/index";
-import zhanshi from "@/components/zhanshi";
+import Login from "../components/Login";
+import creat from "../components/Creat";
+import detail from "../components/detail";
+import index from "../components/Index";
+import zhanshi from "../components/zhanshi";
 
 
 Vue.use(VueRouter)
 const router = new VueRouter({
     routes: [
-        { path: '/', redirect: '/index' },
+        // { path: '/', redirect: '/index' },
         { path: '/login', component: Login },
-        { path: '/creat', component: creat },
-        { path: '/detail', component: detail },
-        { path: '/index', component: index },
-        { path: '/zhanshi', component: zhanshi },
+        // { path: '/creat', component: creat },
+        // { path: '/detail', component: detail },
+        // { path: '/index', component: index },
+        // { path: '/zhanshi', component: zhanshi },
     ]
 })
+
+
 router.beforeEach((to, from, next) => {
     /**
      * to: 将要访问的路径
