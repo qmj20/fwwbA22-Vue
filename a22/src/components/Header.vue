@@ -20,17 +20,19 @@
 
   </div>
   <div class="line"></div>
+  <div id="parm" >
   <div class="nav mid">
     <div class="nav_left left">
       <ul>
-        <li class="one">
+        <li>
           <a href="/index">我的首页</a>
         </li>
-        <li class>
+        <li>
           <a href="/zhanshi">商城</a>
         </li>
       </ul>
     </div>
+  </div>
   </div>
 </div>
 </template>
@@ -44,5 +46,9 @@ export default {
 </script>
 
 <style scoped>
-
+#parm{
+  background-color: white;
+  width: 100%;
+  min-width:1200px;
+}
 </style>
