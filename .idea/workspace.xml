@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e33a6a26-ffd0-4254-9a0e-b19dbf037413" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a22/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/a22/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a22/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/a22/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a22/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/a22/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a22/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/a22/src/components/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a22/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/a22/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a22/src/components/Creat.vue" beforeDir="false" afterPath="$PROJECT_DIR$/a22/src/components/Creat.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a22/src/components/detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/a22/src/components/detail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a22/src/components/zhanshi.vue" beforeDir="false" afterPath="$PROJECT_DIR$/a22/src/components/zhanshi.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a22/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/a22/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +67,7 @@
       <updated>1641910553572</updated>
       <workItem from="1641910556066" duration="11982000" />
       <workItem from="1642059628369" duration="35000" />
+      <workItem from="1642147482229" duration="8000" />
     </task>
     <servers />
   </component>

@@ -9,13 +9,14 @@ import zhanshi from "../components/zhanshi";
 
 Vue.use(VueRouter)
 const router = new VueRouter({
+    mode:'history',
     routes: [
-        // { path: '/', redirect: '/index' },
+        { path: '/', redirect: '/index' },
         { path: '/login', component: Login },
-        // { path: '/creat', component: creat },
-        // { path: '/detail', component: detail },
-        // { path: '/index', component: index },
-        // { path: '/zhanshi', component: zhanshi },
+        { path: '/creat', component: creat },
+        { path: '/detail', component: detail },
+        { path: '/index', component: index },
+        { path: '/zhanshi', component: zhanshi },
     ]
 })
 
