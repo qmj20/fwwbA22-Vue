@@ -4,6 +4,8 @@ import router from './router'
 import './assets/js/jquery.min.js'
 import './assets/css/app.272005c6.css'
 import './assets/css/chunk-e4c39566.6876dbe4.css'
+import './assets/css/bootstrap.min.css'
+import './assets/css/style.css'
 // import axios from 'axios'
 // axios.interceptors.request.use(config => {
 //   config.headers.Authorization = window.sessionStorage.getItem('token')

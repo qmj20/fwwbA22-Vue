@@ -17,7 +17,7 @@
             <p>单份金额</p>
           </li>
           <li>
-            <button>查看详情</button>
+            <button :href="'/detail/'+site.id*5+2*3">查看详情</button>
             <p>{{site.shijian}}点开始秒杀</p>
           </li>
         </ul>
@@ -33,9 +33,9 @@ export default {
   data(){
     return {
       SellMessage: [
-        {jieshao:"较基准上浮55%",jine:10010,shijian:"12:30"},
-        {jieshao:"较基准上浮25%",jine:10020,shijian:"12:50"},
-        {jieshao:"较基准上浮35%",jine:10030,shijian:"11:00"},
+        {jieshao:"较基准上浮55%",jine:10010,shijian:"12:30",id:"0"},
+        {jieshao:"较基准上浮25%",jine:10020,shijian:"12:50",id:"1"},
+        {jieshao:"较基准上浮35%",jine:10030,shijian:"11:00",id:"2"},
       ],
     }
   },
