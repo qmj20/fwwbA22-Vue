@@ -14,23 +14,23 @@ const router = new VueRouter({
         { path: '/', redirect: '/index' },
         { path: '/login', component: Login },
         { path: '/creat', component: creat },
-        { path: '/detail', component: detail },
+        { path: '/detail/id=:id', component: detail },
         { path: '/index', component: index },
         { path: '/zhanshi', component: zhanshi },
     ]
 })
 
 
-router.beforeEach((to, from, next) => {
-    /**
-     * to: 将要访问的路径
-     * from: 代表从哪个路径跳转而来
-     * next：一个函数，表示放行
-     * */
-    if (to.path === '/login' || to.path === '/index' || to.path === '/creat' || to.path === '/detail' || to.path === '/zhanshi' ) return next()
-    let token = window.sessionStorage.getItem('token')
-    if (!token) return next('/login')
-    next()
-})
-
+// router.beforeEach((to, from, next) => {
+//     /**
+//      * to: 将要访问的路径
+//      * from: 代表从哪个路径跳转而来
+//      * next：一个函数，表示放行
+//      * */
+//     if (to.path === '/login' || to.path === '/index' || to.path === '/creat' || to.path === '/detail' || to.path === '/zhanshi' ) return next()
+//     let token = window.sessionStorage.getItem('token')
+//     if (!token) return next('/login')
+//     next()
+// })
+//
 export default router

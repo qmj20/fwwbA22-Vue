@@ -9,15 +9,15 @@
       <div class="lclb_lb" v-for="site in SellMessage">
         <ul>
           <li>
-            <h2>{{site.jieshao}}</h2>
+            <h2>{{site.name}}</h2>
             <p>最高年化效率</p>
           </li>
           <li>
-            <h2>{{site.jine}}</h2>
+            <h2>{{site.price}}</h2>
             <p>单份金额</p>
           </li>
           <li>
-            <button :href="'/detail/'+site.id*5+2*3">查看详情</button>
+            <button :href="mymethon()">查看详情</button>
             <p>{{site.shijian}}点开始秒杀</p>
           </li>
         </ul>
@@ -32,22 +32,28 @@ export default {
   name: "zhanshi",
   data(){
     return {
-      SellMessage: [
-        {jieshao:"较基准上浮55%",jine:10010,shijian:"12:30",id:"0"},
-        {jieshao:"较基准上浮25%",jine:10020,shijian:"12:50",id:"1"},
-        {jieshao:"较基准上浮35%",jine:10030,shijian:"11:00",id:"2"},
-      ],
+      SellMessage: {},
     }
   },
-  // created () {
-  //   this.getSellMessage()
-  // },
-  // methods:{
-  //   async getSellMessage(){
-  //
-  //   }
-  // }
+  created () {
+    this.getSellMessage()
+  },
+  methods: {
+    async getSellMessage () {
+      let params = {
+        id: this.$route.params.id
+      }
+      const response = await this.$http.get('http://47.97.23.194:8080/commodity/select_all_com')
+      console.log(response)
+      if (response.status !== 200 || response.data === '') return this.$message.error('获取数据失败')
+      this.SellMessage = response.data
+    },
 }
+}
+  function  mymethon(name,sex,address){
+  alert("姓名"+name+";性别:"+sex+";住址:"+address);
+}
+
 </script>
 
 <style scoped>
