@@ -46,7 +46,6 @@ export default {
       let params = {
         id: this.$route.params.id
       }
-      console.log('api/commodity/select_com_by_id?id='+ this.$route.params.id)
       const response = await this.$http.get('http://47.97.23.194:8080/commodity/select_com_by_id?id='+ this.$route.params.id)
       // console.log('api/commodity/select_com_by_id?id='+ this.$route.params.id)
       if (response.status !== 200 || response.data === '') return this.$message.error('获取数据失败')

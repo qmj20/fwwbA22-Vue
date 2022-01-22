@@ -17,7 +17,7 @@
             <p>单份金额</p>
           </li>
           <li>
-            <button :href="mymethon()">查看详情</button>
+            <button onclick="mymethon('张三','男','北京市朝阳区')">查看详情</button>
             <p>{{site.shijian}}点开始秒杀</p>
           </li>
         </ul>
@@ -27,7 +27,10 @@
   </div>
 </template>
 
-<script>
+<script>function mymethon(张三, 男, 北京市朝阳区) {
+  alert("姓名"+name+";性别:"+sex+";住址:"+address);
+}
+
 export default {
   name: "zhanshi",
   data(){
@@ -37,6 +40,7 @@ export default {
   },
   created () {
     this.getSellMessage()
+
   },
   methods: {
     async getSellMessage () {
@@ -50,10 +54,6 @@ export default {
     },
 }
 }
-  function  mymethon(name,sex,address){
-  alert("姓名"+name+";性别:"+sex+";住址:"+address);
-}
-
 </script>
 
 <style scoped>

@@ -8,12 +8,12 @@
               <h1>个人网上银行登录</h1>
             </div>
             <div class="input">
-              <form>
-                <input type="text" maxlength="30" required="required" placeholder="手机号码/身份证" autofocus="autofocus" class="input_one">
-                <input type="text" maxlength="30" required="required" placeholder="密码" autofocus="autofocus" class="input_two">
-                <button type="button" class="input_btn">
+              <el-form ref="loginFromRef" :model="LoginFrom" :rules="LoginFromRules" method="post" autocomplete="off" action="">
+                <input type="text" v-model="LoginFrom.id" maxlength="30" name="id" required="required" placeholder="身份证" autofocus="autofocus" class="input_one">
+                <input type="text" v-model="LoginFrom.password" name="password" maxlength="30" required="required" placeholder="密码" autofocus="autofocus" class="input_two">
+                <el-button type="submit" class="input_btn" @click="LoginSubmit">
                   登录
-                </button>
+                </el-button>
                 <div class="input_fk">
                   <div class="input_fxk">
                     <a style="margin-right: 10px" href="/creat">注册</a>
@@ -24,7 +24,7 @@
                     <span class="anquan">安全提示：请勿向“不安全账户”转账</span>
                   </div>
                 </div>
-              </form>
+              </el-form>
             </div>
           </div>
         </div>
@@ -64,7 +64,49 @@
 
 <script>
 export default {
-  name: "Login"
+  name: "Login",
+  data() {
+
+    return {
+
+      LoginFrom: {
+        id: "",
+        password: ""
+      },
+
+      LoginFromRules: {
+        name: [{required: true, message: "请输入身份证号", trigger: "blur"}],
+        password: [{required: true, message: "请输入密码", trigger: "blur"}]
+      }
+    }
+  },
+
+  methods: {
+    LoginSubmit() {
+      if (this.LoginFrom.id === '') {
+        alert('请输入身份证号');
+      } else if (this.LoginFrom.password === '') {
+        alert('请输入密码');
+      } else {
+        // noinspection JSValidateTypes
+        let creatData = {
+          id: this.LoginFrom.id,
+          password: this.$md5(this.LoginFrom.password),
+        };
+        console.log(creatData)
+        this.$refs.loginFromRef.validate( async valid => {
+          if(!valid) return;
+          const response = await this.$http.post('http://47.97.23.194:8080/',creatData );
+          console.log(response)
+          // if(response.data === '用户名或密码错误') return  alert(response.data);
+          alert('登录成功');
+          // noinspection JSValidateTypes
+          window.sessionStorage.setItem('token',this.$md5(creatData.password+creatData.id));
+          await this.$router.push('/index');
+        } )
+      }
+    }
+  }
 }
 </script>
 
