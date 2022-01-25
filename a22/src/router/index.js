@@ -5,6 +5,7 @@ import creat from "../components/Creat";
 import detail from "../components/detail";
 import index from "../components/Index";
 import zhanshi from "../components/zhanshi";
+import ShowCommodity from "../components/ShowCommodity";
 
 
 Vue.use(VueRouter)
@@ -17,6 +18,7 @@ const router = new VueRouter({
         { path: '/detail/id=:id', component: detail },
         { path: '/index', component: index },
         { path: '/zhanshi', component: zhanshi },
+        { path: '/show/id=:seckillId', component: ShowCommodity },
     ]
 })
 

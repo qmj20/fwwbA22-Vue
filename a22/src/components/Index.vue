@@ -4,16 +4,15 @@
       <div class="d-table">
         <div class="d-table-cell">
           <div class="container-fluid">
-            <div class="main-banner-content"><span>We are here for</span>
-              <h1>Start or grow your own business</h1>
-              <p>Loans are advantageous as a relatively inexpensive way of borrowing money. We believe in
-                those made to do more.</p>
+            <div class="main-banner-content"><span>by V_byte队</span>
+              <h1>湖南三湘银行秒杀平台</h1>
+              <p></p>
               <div class="banner-btn"><a href="/zhanshi"
                                          class="default-btn">进入商城<span></span></a></div>
             </div>
             <div class="banner-social-buttons">
               <ul>
-                <li><span>Follow us</span></li>
+<!--                <li><span>Follow us</span></li>-->
                 <li><a href="http://v.bootstrapmb.com/2020/7/qmwdo8503/#" target="_blank"><i
                     class="flaticon-twitter"></i></a></li>
                 <li><a href="http://v.bootstrapmb.com/2020/7/qmwdo8503/#" target="_blank"><i
@@ -32,20 +31,20 @@
           <div class="row">
             <div class="col-lg-4 col-md-6">
               <div class="approvals-content">
-                <div class="icon"><i class="flaticon-loan"></i></div><span>Quick</span>
-                <p>Loan approvals</p>
+                <div class="icon"><i class="flaticon-loan"></i></div><span>多种加密措施</span>
+                <p>安全稳定</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
               <div class="approvals-content">
-                <div class="icon"><i class="flaticon-satisfaction"></i></div><span>20,000</span>
-                <p>Customers satisfaction</p>
+                <div class="icon"><i class="flaticon-satisfaction"></i></div><span>支持200次</span>
+                <p>以上并发</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
               <div class="approvals-content">
-                <div class="icon"><i class="flaticon-document"></i></div><span>No prepayment or</span>
-                <p>hidden fees</p>
+                <div class="icon"><i class="flaticon-document"></i></div><span>隶属于</span>
+                <p>山东中医药大学b410</p>
               </div>
             </div>
           </div>

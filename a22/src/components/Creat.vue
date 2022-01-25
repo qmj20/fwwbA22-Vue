@@ -84,7 +84,7 @@ export default {
         // noinspection JSValidateTypes
         let data1 = new Date().getTime()
         let creatData = {
-          'data': data1,
+          date: data1,
           id: this.CreatFrom.id,
           name: this.CreatFrom.name,
           password: this.$md5(this.CreatFrom.password),

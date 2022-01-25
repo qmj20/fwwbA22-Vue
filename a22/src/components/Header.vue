@@ -4,7 +4,8 @@
     <div class="header_logo mid">
       <img src="../assets/images/1logo.c4b29e1c.png" class="header_left left">
       <div class="header_right right">
-        <ul v-if="gettoken ===false">
+<!--        <ul v-if="gettoken ===false">-->
+        <ul>
           <li class="font_size">
             <a href="/creat">注册</a>
           </li>
@@ -15,11 +16,11 @@
             <a href="/login">登录</a>
           </li>
         </ul>
-        <ul v-else>
-          <li class="font_size">
-            <a>退出登录</a>
-          </li>
-        </ul>
+<!--        <ul v-else>-->
+<!--          <li class="font_size">-->
+<!--            <a>退出登录</a>-->
+<!--          </li>-->
+<!--        </ul>-->
       </div>
     </div>
 
