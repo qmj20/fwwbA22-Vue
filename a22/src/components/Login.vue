@@ -17,7 +17,7 @@
                 <div class="input_fk">
                   <div class="input_fxk">
                     <a style="margin-right: 10px" href="/creat">注册</a>
-                    <a>忘记密码</a>
+                    <a href="/forget">忘记密码</a>
                   </div>
                   <div class="input_tishi">
                     <div class="tishi"></div>

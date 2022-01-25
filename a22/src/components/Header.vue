@@ -56,7 +56,6 @@ export default {
     gettoken() {
       let token=sessionStorage.getItem("token");
       if (!token) return false
-      else return true
     }
   }
 }

@@ -6,6 +6,8 @@ import detail from "../components/detail";
 import index from "../components/Index";
 import zhanshi from "../components/zhanshi";
 import ShowCommodity from "../components/ShowCommodity";
+import Forget from "../components/Forget";
+import usermessage from "../components/usermessage";
 
 
 Vue.use(VueRouter)
@@ -19,6 +21,8 @@ const router = new VueRouter({
         { path: '/index', component: index },
         { path: '/zhanshi', component: zhanshi },
         { path: '/show/id=:seckillId', component: ShowCommodity },
+        { path: '/forget', component: Forget },
+        { path: '/usermessage/user', component: usermessage },
     ]
 })
 
