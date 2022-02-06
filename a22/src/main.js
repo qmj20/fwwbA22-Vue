@@ -10,6 +10,7 @@ import VueResource from 'vue-resource'
 import axios from 'axios';
 import md5 from 'js-md5';
 import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
 Vue.prototype.$md5 = md5;
 // axios.interceptors.request.use(config => {
 //   config.headers.Authorization = window.sessionStorage.getItem('token')
