@@ -7,7 +7,7 @@ import index from "../components/Index";
 import zhanshi from "../components/zhanshi";
 import ShowCommodity from "../components/ShowCommodity";
 import usermessage from "../components/usermessage";
-
+import usermessageChange from "../components/usermessageChange";
 
 Vue.use(VueRouter)
 const router = new VueRouter({
@@ -21,6 +21,8 @@ const router = new VueRouter({
         { path: '/zhanshi', component: zhanshi },
         { path: '/show/id=:seckillId', component: ShowCommodity },
         { path: '/usermessage/user', component: usermessage },
+        { path: '/usermessage/user/messageChange', component: usermessageChange },
+        // { path: '/usermessage/user/id=:userid', component: usermessage },
     ]
 })
 

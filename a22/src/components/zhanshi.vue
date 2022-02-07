@@ -45,7 +45,7 @@ export default {
       let params = {
         seckillId: this.$route.params.seckillId
       }
-      const response = await this.$http.get('http://47.97.23.194:8080/seckill/select_all_seckill')
+      const response = await this.$http.get('http://47.97.23.194:8080/seckill/select-all')
       console.log(response)
       if (response.status !== 200 || response.data === '') return this.$message.error('获取数据失败')
       this.SellMessage = response.data

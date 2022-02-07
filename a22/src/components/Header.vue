@@ -34,7 +34,7 @@
           <a href="/index">我的首页</a>
         </li>
         <li>
-          <a href="/zhanshi">我的信息</a>
+          <a href="/usermessage/user">我的信息</a>
         </li>
         <li>
           <a href="/zhanshi">商城</a>

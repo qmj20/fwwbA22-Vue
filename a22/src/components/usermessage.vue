@@ -9,14 +9,14 @@
               <div class="zz_top mid">
                 <div>我的信息</div>
               </div>
-              <el-form ref="loginFromRef" :model="ForgetFrom" :rules="ForgetFromRules" method="get" autocomplete="off" action="">
+              <el-form  :model="ShowMessage" method="get" autocomplete="off" action="">
                 <div class="trade_mess">
                   <div class="trade_mess_row">
                     <div class="trade_mess_left">
                       <span>客户姓名</span>
                     </div>
                     <div class="trade_mess_right">
-                      <input v-model="ForgetFrom.name" maxlength="30" name="name" placeholder="请输入客户姓名" title="客户姓名" type="text">
+                      <span style="background-color: white">{{ShowMessage.name}}</span>
                     </div>
                   </div>
                   <div class="trade_mess_row">
@@ -24,19 +24,21 @@
                       <span>身份证号码</span>
                     </div>
                     <div class="trade_mess_right">
-                      <input v-model="ForgetFrom.id" maxlength="30" name="id" placeholder="请输入证件号码" title="证件号码" type="text">
+                      <span style="background-color: white">{{ShowMessage.id}}</span>
                     </div>
                   </div>
                   <div class="trade_mess_row">
                     <div class="trade_mess_left">
-                      <span>新密码</span>
+                      <span>密码</span>
                     </div>
                     <div class="trade_mess_right">
-                      <input v-model="ForgetFrom.password" maxlength="30" name="password" placeholder="请输入新密码" title="新密码" type="text">
+                      <span style="background-color: white">{{ShowMessage.password}}</span>
                     </div>
                   </div>
-                  <div class="trade_btns">
-                    <el-button type="submit" class="trade_btn2" @click="ForgetSubmit">确定</el-button>
+                  <div class="trade_btns" style="padding-top: 50px">
+                    <a href="/usermessage/user/messageChange">
+                      <button type="button" class="trade_btn2" >更改信息</button>
+                    </a>
                     <a href="/index">
                       <button type="button" class="trade_btn3" >返回</button>
                     </a>
@@ -53,7 +55,23 @@
 
 <script>
 export default {
-  name: "usermessage"
+  name: "usermessage",
+  data(){
+    return {
+      ShowMessage: {},
+    }
+  },
+  created () {
+    this.getShowMessage()
+  },
+  methods: {
+    async getShowMessage () {
+
+      const response = await this.$http.get('http://47.97.23.194:8080/user/select-id?id=12312312')
+      if (response.status !== 200 || response.data === '') return this.$message.error('获取数据失败')
+      this.ShowMessage = response.data
+    },
+  }
 }
 </script>
 

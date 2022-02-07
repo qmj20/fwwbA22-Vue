@@ -11,7 +11,7 @@
               <el-form ref="loginFromRef" :model="LoginFrom" :rules="LoginFromRules" method="post" autocomplete="off" action="">
                 <input type="text" v-model="LoginFrom.id" maxlength="30" name="id" required="required" placeholder="身份证" autofocus="autofocus" class="input_one">
                 <input type="text" v-model="LoginFrom.password" name="password" maxlength="30" required="required" placeholder="密码" autofocus="autofocus" class="input_two">
-                <el-button type="submit" class="input_btn" @click="LoginSubmit">
+                <el-button type="submit" class="input_btn" @click="LoginSubmit" style="margin-left: 20px;width: 260px">
                   登录
                 </el-button>
                 <div class="input_fk">
@@ -82,6 +82,9 @@ export default {
 
   methods: {
     LoginSubmit() {
+      let params = {
+        userid: this.$route.params.userid
+      }
       if (this.LoginFrom.id === '') {
         alert('请输入身份证号');
       } else if (this.LoginFrom.password === '') {
