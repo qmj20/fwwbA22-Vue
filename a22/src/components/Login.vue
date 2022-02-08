@@ -81,6 +81,7 @@ export default {
   },
 
   methods: {
+
     LoginSubmit() {
       let params = {
         userid: this.$route.params.userid
@@ -93,18 +94,21 @@ export default {
         // noinspection JSValidateTypes
         let creatData = {
           id: this.LoginFrom.id,
-          password: this.$md5(this.LoginFrom.password),
+          // password: this.$md5(this.LoginFrom.password),
+          password:this.LoginFrom.password,
         };
         console.log(creatData)
         this.$refs.loginFromRef.validate( async valid => {
           if(!valid) return;
-          const response = await this.$http.post('http://47.97.23.194:8080/',creatData );
+          const response = await this.$http.post('http://47.97.23.194:8080/login',creatData );
           console.log(response)
           // if(response.data === '用户名或密码错误') return  alert(response.data);
           alert('登录成功');
-          // noinspection JSValidateTypes
-          window.sessionStorage.setItem('token',this.$md5(creatData.password+creatData.id));
+          window.sessionStorage.setItem('token',response.data.token);
+          window.sessionStorage.setItem('refreshToken',response.data.refreshToken);
+          window.sessionStorage.setItem('userid',response.data.id);
           await this.$router.push('/index');
+          location.reload()
         } )
       }
     }

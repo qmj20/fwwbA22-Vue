@@ -4,23 +4,22 @@
     <div class="header_logo mid">
       <img src="../assets/images/1logo.c4b29e1c.png" class="header_left left">
       <div class="header_right right">
-<!--        <ul v-if="gettoken ===false">-->
-        <ul>
+        <ul v-if=this.token>
           <li class="font_size">
-            <a href="/creat">注册</a>
-          </li>
-          <li class="divide_line">
-            <a>|</a>
-          </li>
-          <li class="exit">
-            <a href="/login">登录</a>
+            <a @click="deletetoken">退出登录</a>
           </li>
         </ul>
-<!--        <ul v-else>-->
-<!--          <li class="font_size">-->
-<!--            <a>退出登录</a>-->
-<!--          </li>-->
-<!--        </ul>-->
+        <ul v-else>
+            <li class="font_size">
+              <a href="/creat">注册</a>
+            </li>
+            <li class="divide_line">
+              <a>|</a>
+            </li>
+            <li class="exit">
+              <a href="/login">登录</a>
+            </li>
+        </ul>
       </div>
     </div>
 
@@ -34,7 +33,7 @@
           <a href="/index">我的首页</a>
         </li>
         <li>
-          <a href="/usermessage/user">我的信息</a>
+          <a :href="'/usermessage/user/id='+this.userid">我的信息</a>
         </li>
         <li>
           <a href="/zhanshi">商城</a>
@@ -51,11 +50,35 @@ import Detail from "./detail";
 
 export default {
   name: "Header",
+  data(){
+    let token;
+    let userid;
+    return{
+      token,
+      userid,
+    }
+  },
   components: {Detail},
+  mounted:function () {   //自动触发写入的函数
+    this.gettoken();
+    this.getuserid();
+  },
   methods: {
     gettoken() {
-      let token=sessionStorage.getItem("token");
-      if (!token) return false
+      console.log("执行get")
+      let token1=sessionStorage.getItem("token");
+      this.token = token1 != null;
+    },
+
+    deletetoken(){
+      console.log("执行delete")
+      window.sessionStorage.clear()
+      this.$router.push('/login')
+      this.gettoken()
+      this.token=false
+    },
+    getuserid(){
+      this.userid=sessionStorage.getItem("userid")
     }
   }
 }

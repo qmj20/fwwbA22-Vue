@@ -36,7 +36,7 @@
                     </div>
                   </div>
                   <div class="trade_btns" style="padding-top: 50px">
-                    <a href="/usermessage/user/messageChange">
+                    <a :href="'/usermessage/user/messageChange/id='+this.userid">
                       <button type="button" class="trade_btn2" >更改信息</button>
                     </a>
                     <a href="/index">
@@ -57,8 +57,10 @@
 export default {
   name: "usermessage",
   data(){
+    let userid;
     return {
       ShowMessage: {},
+      userid,
     }
   },
   created () {
@@ -66,10 +68,12 @@ export default {
   },
   methods: {
     async getShowMessage () {
-
-      const response = await this.$http.get('http://47.97.23.194:8080/user/select-id?id=12312312')
+      // let userid=sessionStorage.getItem("userid")
+      const response = await this.$http.get('http://47.97.23.194:8080/user/select-id?id='+sessionStorage.getItem("userid"))
+      console.log(response)
       if (response.status !== 200 || response.data === '') return this.$message.error('获取数据失败')
       this.ShowMessage = response.data
+      this.userid=sessionStorage.getItem("userid")
     },
   }
 }

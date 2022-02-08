@@ -87,21 +87,27 @@ export default {
           date: data1,
           id: this.CreatFrom.id,
           name: this.CreatFrom.name,
-          password: this.$md5(this.CreatFrom.password),
+          password:this.CreatFrom.password,
+          // password: this.$md5(this.CreatFrom.password),
           otherFields: [],
+          refreshToken: "",
           qualifications: true,
-          state: true
+          state: true,
+          token: "",
+          role: true,
         };
         console.log(creatData)
         this.$refs.loginFromRef.validate( async valid => {
           if(!valid) return;
-          const response = await this.$http.post('http://47.97.23.194:8080/user/insert_user',creatData );
+          const response = await this.$http.post('http://47.97.23.194:8080/user/insert',creatData );
           console.log(response)
           // if(response.data === '用户名或密码错误') return  alert(response.data);
           alert('注册成功');
           // noinspection JSValidateTypes
-          window.sessionStorage.setItem('token',this.$md5(creatData.password+creatData.id));
+          window.sessionStorage.setItem('token',creatData.password+creatData.id);
+          window.sessionStorage.setItem('userid',creatData.id);
           await this.$router.push('/index');
+          location.reload()
         } )
       }
     }

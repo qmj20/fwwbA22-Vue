@@ -20,8 +20,8 @@ const router = new VueRouter({
         { path: '/index', component: index },
         { path: '/zhanshi', component: zhanshi },
         { path: '/show/id=:seckillId', component: ShowCommodity },
-        { path: '/usermessage/user', component: usermessage },
-        { path: '/usermessage/user/messageChange', component: usermessageChange },
+        { path: '/usermessage/user/id=:userid', component: usermessage },
+        { path: '/usermessage/user/messageChange/id=:userid', component: usermessageChange },
         // { path: '/usermessage/user/id=:userid', component: usermessage },
     ]
 })

@@ -19,14 +19,14 @@
                       <input v-model="messageChangeFrom.name" maxlength="30" name="name" placeholder="请输入客户姓名" title="客户姓名" type="text">
                     </div>
                   </div>
-                  <div class="trade_mess_row">
-                    <div class="trade_mess_left">
-                      <span>身份证号码</span>
-                    </div>
-                    <div class="trade_mess_right">
-                      <input v-model="messageChangeFrom.id" maxlength="30" name="id" placeholder="请输入证件号码" title="证件号码" type="text">
-                    </div>
-                  </div>
+<!--                  <div class="trade_mess_row">-->
+<!--                    <div class="trade_mess_left">-->
+<!--                      <span>身份证号码</span>-->
+<!--                    </div>-->
+<!--                    <div class="trade_mess_right">-->
+<!--                      <input v-model="messageChangeFrom.id" maxlength="30" name="id" placeholder="请输入证件号码" title="证件号码" type="text">-->
+<!--                    </div>-->
+<!--                  </div>-->
                   <div class="trade_mess_row">
                     <div class="trade_mess_left">
                       <span>密码</span>
@@ -58,13 +58,13 @@ export default {
     return {
       ShowMessage: {},
       messageChangeFrom: {
-        id: "",
+        // id: "",
         name: "",
         password: ""
       },
 
       messageChangeFromRules: {
-        id: [{required: true, messages: "请输入身份证号", trigger: "blur"}],
+        // id: [{required: true, messages: "请输入身份证号", trigger: "blur"}],
         name: [{required: true, message: "请输入用户名", trigger: "blur"}],
         password: [{required: true, message: "请输入密码", trigger: "blur"}]
       }
@@ -88,13 +88,12 @@ export default {
         // } else if (this.messageChangeFrom.id === '') {
         //   alert('请输入id');
         // } else {
-          // noinspection JSValidateTypes
           let data1 = new Date().getTime()
           let ChangeData = {
             date: data1,
-            id: this.messageChangeFrom.id,
+            id: sessionStorage.getItem("userid"),
             name: this.messageChangeFrom.name,
-            password: this.$md5(this.messageChangeFrom.password),
+            password: this.messageChangeFrom.password,
             otherFields: [],
             qualifications: true,
             state: true,
@@ -104,7 +103,7 @@ export default {
             if(!valid) return;
             const response = await this.$http.post('http://47.97.23.194:8080/user/update',ChangeData);
             console.log(response)
-            alert('注册成功');
+            alert('修改成功');
             // window.sessionStorage.setItem('token',this.$md5(creatData.password+creatData.id));
             await this.$router.push('/index');
           } )

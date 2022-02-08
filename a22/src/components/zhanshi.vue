@@ -29,6 +29,9 @@
 </template>
 
 <script>
+import axios from "axios";
+import JSONbig from "json-bigint";
+
 export default {
   name: "zhanshi",
   data(){
@@ -49,7 +52,10 @@ export default {
       console.log(response)
       if (response.status !== 200 || response.data === '') return this.$message.error('获取数据失败')
       this.SellMessage = response.data
+      console.log(this.SellMessage)
+
     },
+
 }
 }
 </script>
